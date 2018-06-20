@@ -1,0 +1,79 @@
+[System]
+Name='teste'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sf'
+Range=[0 2]
+NumMFs=3
+MF1='perto':'trapmf',[-0.2433 -0.09667 0.4469 0.6667]
+MF2='longe':'trapmf',[1.341 1.593 2.285 2.537]
+MF3='normal':'trimf',[0.5333 0.9867 1.467]
+
+[Input2]
+Name='sd'
+Range=[0 2]
+NumMFs=3
+MF1='perto':'trapmf',[-0.72 -0.08 0 0.4667]
+MF2='longe':'trapmf',[1.133 1.8 2.08 2.72]
+MF3='normal':'trimf',[0.3333 1 1.333]
+
+[Input3]
+Name='se'
+Range=[0 2]
+NumMFs=3
+MF1='perto':'trapmf',[-0.72 -0.08 0 0.6667]
+MF2='longe':'trapmf',[1.2 1.8 2.02 2.7]
+MF3='normal':'trimf',[0.4667 1 1.333]
+
+[Output1]
+Name='wd'
+Range=[-2 2]
+NumMFs=3
+MF1='SAR':'trapmf',[-2 -2 -1.6 -0.4]
+MF2='SHR':'trapmf',[0.4 1.6 2 2]
+MF3='SM':'trimf',[-0.6 0 0.6]
+
+[Output2]
+Name='we'
+Range=[-2 2]
+NumMFs=3
+MF1='SAR':'trapmf',[-2 -2 -1.6 -0.4]
+MF2='SHR':'trapmf',[0.4 1.6 2 2]
+MF3='SM':'trimf',[-0.6 0 0.6]
+
+[Rules]
+1 2 1, 1 2 (1) : 1
+1 1 1, 1 1 (1) : 1
+1 1 2, 2 1 (1) : 1
+1 2 1, 1 2 (1) : 1
+3 1 1, 2 2 (1) : 1
+3 1 3, 1 2 (1) : 1
+3 3 1, 2 1 (1) : 1
+3 3 3, 2 2 (1) : 1
+3 2 2, 2 1 (1) : 1
+3 3 3, 2 2 (1) : 1
+2 0 0, 2 2 (1) : 1
+3 3 2, 3 1 (1) : 1
+3 1 2, 2 3 (1) : 1
+3 2 1, 1 3 (1) : 1
+1 3 1, 1 2 (1) : 1
+1 3 3, 2 3 (1) : 1
+1 3 2, 2 1 (1) : 1
+1 2 3, 1 3 (1) : 1
+1 1 3, 2 1 (1) : 1
+1 2 2, 1 3 (1) : 1
+3 2 3, 3 2 (1) : 1
+2 1 2, 2 3 (1) : 1
+2 2 1, 1 2 (1) : 1
+2 3 3, 2 2 (1) : 1
+2 1 1, 2 2 (1) : 1

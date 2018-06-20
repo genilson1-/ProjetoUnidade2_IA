@@ -1,0 +1,54 @@
+[System]
+Name='basefuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sensorFrontal'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='proximo':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Input2]
+Name='sensorEsq'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='proximo':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Input3]
+Name='sensorDir'
+Range=[0 3]
+NumMFs=3
+MF1='perto':'trapmf',[-1.08 -0.12 0.12 1.08]
+MF2='proximo':'trimf',[0.3 1.5 2.7]
+MF3='longe':'trapmf',[1.92 2.88 3.12 4.08]
+
+[Output1]
+Name='rodaEsq'
+Range=[-0.5 0.5]
+NumMFs=3
+MF1='WEbackward':'gaussmf',[0.1699 -0.5]
+MF2='WEbreak':'gaussmf',[0.1699 1.388e-17]
+MF3='WEfoward':'gaussmf',[0.1699 0.5]
+
+[Output2]
+Name='rodaDir'
+Range=[0 3]
+NumMFs=3
+MF1='WEbackward':'gaussmf',[0.5097 0]
+MF2='WEbreak':'gaussmf',[0.5097 1.5]
+MF3='WEfoward':'gaussmf',[0.5097 3]
+
+[Rules]

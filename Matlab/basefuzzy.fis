@@ -1,0 +1,60 @@
+[System]
+Name='basefuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='frontal'
+Range=[0 2]
+NumMFs=3
+MF1='proximo':'trapmf',[-0.703 -0.496 0.3 0.737]
+MF2='perto':'trimf',[0.5 1 1.5]
+MF3='longe':'trapmf',[1.26 1.7 2.382 2.7]
+
+[Input2]
+Name='esquerdo'
+Range=[0 2]
+NumMFs=3
+MF1='proximo':'trapmf',[-0.703 -0.496 0.3 0.737]
+MF2='perto':'trimf',[0.5 1 1.5]
+MF3='longe':'trapmf',[1.26 1.7 2.382 2.7]
+
+[Input3]
+Name='direito'
+Range=[0 2]
+NumMFs=3
+MF1='proximo':'trapmf',[-0.703 -0.496 0.3 0.737]
+MF2='perto':'trimf',[0.5 1 1.5]
+MF3='longe':'trapmf',[1.26 1.7 2.382 2.7]
+
+[Output1]
+Name='WE'
+Range=[-2 2]
+NumMFs=3
+MF1='backward':'trimf',[-3.6 -2 -0.4]
+MF2='breack':'trimf',[-1.6 0 1.6]
+MF3='foward':'trimf',[0.4 2 3.6]
+
+[Output2]
+Name='WD'
+Range=[-2 2]
+NumMFs=3
+MF1='backward':'trimf',[-3.6 -2 -0.4]
+MF2='break':'trimf',[-1.6 0 1.6]
+MF3='foward':'trimf',[0.4 2 3.6]
+
+[Rules]
+3 0 0, 3 3 (1) : 2
+2 0 0, 3 3 (0.6) : 1
+0 1 3, 3 1 (1) : 1
+0 2 3, 3 2 (1) : 1
+0 3 1, 1 3 (1) : 1
+0 3 2, 2 3 (1) : 1
